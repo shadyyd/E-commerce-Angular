@@ -1,0 +1,22 @@
+.container {
+  padding: 20px;
+}
+.product-image {
+  width: 100%;
+  /* Adjust the width as needed */
+}
+.product-rating {
+  margin-top: 10px;
+}
+.product-price {
+  font-weight: bold;
+}
+.stock-message-red {
+  color: red;
+}
+.stock-message-green {
+  color: green;
+}
+.add-to-cart-button {
+  margin-top: 10px;
+}

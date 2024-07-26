@@ -1,0 +1,38 @@
+<div class="card m-3" style="width: 18rem">
+  <div class="position-relative">
+    <img
+      [src]="product.images[0]"
+      class="card-img-top"
+      alt="Wireless Earbuds"
+    />
+    <span
+      class="badge badge-success position-absolute"
+      style="top: 10px; left: 10px"
+      >In stock</span
+    >
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <p class="card-text">${{ product.price }}</p>
+    <p class="card-text">
+      <small class="text-muted">{{ product.tags.join(", ") }}</small>
+    </p>
+    <div class="d-flex align-items-center mb-3">
+      <div class="text-warning mr-2">
+        @for(a of arr;track $index){ @if(a<=product.rating){
+        <span class="text-warning"><i class="fa-solid fa-star"></i></span>
+        }@else {
+        <span class="text-warning"><i class="fa-regular fa-star"></i></span>
+        } }
+      </div>
+      <small>{{ product.rating }}</small>
+    </div>
+    <div>
+      <a
+        [routerLink]="['product-details', product.id]"
+        class="btn btn-outline-primary"
+        >Details</a
+      >
+    </div>
+  </div>
+</div>

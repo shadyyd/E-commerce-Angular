@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img [src]="product.images[0]" alt="" class="product-image" />
+    </div>
+    <div class="col-md-6">
+      <h2 class="product-title">{{ product.title }}</h2>
+      <p class="product-description">
+        {{ product.description }}
+      </p>
+      <div class="product-rating">
+        @for(a of arr;track $index){ @if(a<=rate){
+        <span class="text-warning"><i class="fa-solid fa-star"></i></span>
+        }@else {
+        <span class="text-warning"><i class="fa-regular fa-star"></i></span>
+        } } ({{ product.rating }})
+      </div>
+      <div class="product-price">${{ product.price }}</div>
+      @if(stock<=5){
+      <p class="stock-message-red">Only {{ product.stock }} Items Left!</p>
+      }@else {
+      <p class="stock-message-green">In Stock: {{ product.stock }}</p>
+      }
+      <div class="add-to-cart-button">
+        <button type="button" class="btn btn-primary me-2">Buy Now</button>
+        <button type="button" class="btn btn-secondary">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
