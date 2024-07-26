@@ -14,10 +14,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" routerLink="/">Products</a>
-        <a class="nav-link" routerLink="/login">Login</a>
-        <a class="nav-link" routerLink="/register">Register</a>
-        <a class="nav-link" routerLink="/cart">Cart</a>
+        <a
+          class="nav-link"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Products</a
+        >
+        <a class="nav-link" routerLink="/login" routerLinkActive="active"
+          >Login</a
+        >
+        <a class="nav-link" routerLink="/register" routerLinkActive="active"
+          >Register</a
+        >
+        <a class="nav-link" routerLink="/cart" routerLinkActive="active"
+          >Cart</a
+        >
       </div>
     </div>
   </div>

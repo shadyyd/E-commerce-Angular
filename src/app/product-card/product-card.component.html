@@ -5,15 +5,32 @@
       class="card-img-top"
       alt="Wireless Earbuds"
     />
+    @if(product.availabilityStatus === "Low Stock"){
     <span
-      class="badge badge-success position-absolute"
+      class="badge bg-danger position-absolute"
+      style="top: 10px; left: 10px"
+      >Low stock</span
+    >
+    }@else {
+    <span
+      class="badge bg-success position-absolute"
       style="top: 10px; left: 10px"
       >In stock</span
     >
+    }
   </div>
   <div class="card-body">
     <h5 class="card-title">{{ product.title }}</h5>
-    <p class="card-text">${{ product.price }}</p>
+    @if(product.discountPercentage < 1) {
+    <p class="card-text fs-4">${{ product.price }}</p>
+    }@else {
+    <p class="card-text text-decoration-line-through">
+      $ <span class="text-danger">{{ product.price }}</span>
+    </p>
+    <p class="card-text fs-4">
+      $ {{ product.price | discount : product.discountPercentage }}
+    </p>
+    }
     <p class="card-text">
       <small class="text-muted">{{ product.tags.join(", ") }}</small>
     </p>
