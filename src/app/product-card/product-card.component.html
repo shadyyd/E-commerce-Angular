@@ -44,12 +44,15 @@
       </div>
       <small>{{ product.rating }}</small>
     </div>
-    <div>
-      <a
-        [routerLink]="['product-details', product.id]"
-        class="btn btn-outline-primary"
-        >Details</a
-      >
-    </div>
+  </div>
+  <div class="card-end cardd">
+    <a
+      [routerLink]="['product-details', product.id]"
+      class="btn btn-outline-primary me-3"
+      >Details</a
+    >
+    <button class="btn btn-outline-dark" #btn (click)="addOrRemoveToCart()">
+      @if(inCart){ Remove from Cart }@else { Add to Cart }
+    </button>
   </div>
 </div>

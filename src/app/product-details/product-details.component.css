@@ -2,8 +2,8 @@
   padding: 20px;
 }
 .product-image {
-  width: 100%;
-  /* Adjust the width as needed */
+  width: 500px;
+  height: 500px;
 }
 .product-rating {
   margin-top: 10px;

@@ -1,5 +1,7 @@
 <div class="d-flex flex-wrap justify-content-center">
-  @for(prod of products;track $index){
+  @for(prod of filterdProducts;track $index){
   <app-product-card [product]="prod"></app-product-card>
+  }@empty {
+  <p>No products found matching the search criteria.</p>
   }
 </div>
